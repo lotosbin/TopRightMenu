@@ -1,4 +1,5 @@
 import com.android.build.api.dsl.SettingsExtension
+import java.net.URI
 
 pluginManagement {
     repositories {
@@ -18,6 +19,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url = URI("https://jitpack.io") }
     }
 }
 include(":app")
