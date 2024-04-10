@@ -1,7 +1,7 @@
 package com.lisn.toprightmenudemo;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
                         .showIcon(showIcon)     //显示菜单图标，默认为true
                         .dimBackground(dimBg)           //背景变暗，默认为true
                         .needAnimationStyle(needAnim)   //显示动画，默认为true
-                        .setAnimationStyle(R.style.TRM_ANIM_STYLE)  //默认为R.style.TRM_ANIM_STYLE
+                        .setAnimationStyle(com.lisn.toprightmenu.R.style.TRM_ANIM_STYLE)  //默认为R.style.TRM_ANIM_STYLE
                         .addMenuList(menuItems)
                         .addMenuItem(new MenuItem(R.mipmap.facetoface, "面对面快传"))
                         .addMenuItem(new MenuItem(R.mipmap.pay, "付款"))
@@ -69,16 +69,13 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        switch (buttonView.getId()){
-            case R.id.cb_icon:
-                showIcon = isChecked;
-                break;
-            case R.id.cb_bg:
-                dimBg = isChecked;
-                break;
-            case R.id.cb_anim:
-                needAnim = isChecked;
-                break;
+        int id = buttonView.getId();
+        if (id == R.id.cb_icon) {
+            showIcon = isChecked;
+        } else if (id == R.id.cb_bg) {
+            dimBg = isChecked;
+        } else if (id == R.id.cb_anim) {
+            needAnim = isChecked;
         }
     }
 }
