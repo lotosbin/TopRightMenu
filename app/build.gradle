@@ -5,6 +5,7 @@ android {
     namespace 'com.lisn.toprightmenudemo'
     defaultConfig {
         applicationId "com.zaaach.toprightmenudemo"
+        //noinspection ExpiredTargetSdkVersion
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
